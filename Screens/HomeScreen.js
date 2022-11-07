@@ -11,7 +11,7 @@ const HomeScreen = () => {
        <Stories/>
        <ScrollView>
         {POSTS.map((post,index) => (
-          <Post post={post} kwy={index}/>
+          <Post post={post} key={index}/>
         ))}
        </ScrollView>
     </SafeAreaView>
