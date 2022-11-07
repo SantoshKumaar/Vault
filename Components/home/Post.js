@@ -27,7 +27,10 @@ import React from 'react'
         <Divider width={10} orientation='vertical'/>
         <PostHeader post = {post}/>
         <PostImage post = {post}/>
+        <View style={{marginHorizontal:15, marginTop:10}}>
         <PostFooter/>
+        <Caption post = {post}/>
+        </View>
     </View>
   )
 }
@@ -53,7 +56,17 @@ const PostHeader = ({post}) => (
 )
 
 const PostFooter = () => (
-    <Icon imgStyle={styles.footerIcon} imgUrl={postFooterIcons[0].imageUrl}/>
+    <view style={{flexDirection:'row', justifyContent:'space-between'}}>
+        <view style={styles.leftFooterIconContainer}>
+        <Icon imgStyle={styles.footerIcon} imgUrl={postFooterIcons[0].imageUrl}/>
+        <Icon imgStyle={styles.footerIcon} imgUrl={postFooterIcons[1].imageUrl}/>
+        <Icon imgStyle={styles.footerIcon} imgUrl={postFooterIcons[2].imageUrl}/>
+        </view>
+
+        <view>
+            <Icon imgStyle={styles.footerIcon} imgUrl={postFooterIcons[3].imageUrl}/>
+        </view>
+    </view>
 )
 
 const Icon = ({imgStyle, imgUrl})=>(
@@ -74,6 +87,15 @@ const PostImage = ({post})=>(
     </View>
 )
 
+const Caption = ({post}) => (
+    <View style={{marginTop:5}}>
+        <Text style={{color: 'white'}}>{post.user}
+        <Text style={{fontWeight:'600'}}>{post.user}</Text>
+        <Text> {post.Caption} </Text>
+        </Text>
+    </View>
+)
+
 const styles = StyleSheet.create({
     story:{
         width:35,
@@ -83,12 +105,20 @@ const styles = StyleSheet.create({
         marginTop:10,
         borderWidth: 1.5,
         borderColor:'white',
-    },
+},
 
-    footerIcon:{
-        width:'33',
-        height:'33',
-    },
+footerIcon:{
+    width:'33',
+    height:'33',
+},
+   
+leftFooterIconContainer:{
+    flexDirection:'row',
+    width :'32%',
+    jstifyContent: 'space-between',
+},
+    
 })
+
 
 export default Post
