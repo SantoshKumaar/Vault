@@ -7,7 +7,7 @@ const Header = () => {
         <TouchableOpacity>
         <Image 
             style= {styles.logo} 
-            source ={require('../../assets/vault_logo.jpg')}
+            source ={require('../../assets/v.png')}
             />
         </TouchableOpacity>
         <View style={styles.iconsContainer}>
@@ -26,7 +26,7 @@ const Header = () => {
             
             <TouchableOpacity>
                 <View style={styles.unreadBadge}>
-                    <Text style={styles.unreadBadgeText}>69</Text>
+                    <Text style={styles.unreadBadgeText}>6</Text>
                 </View>
                 <Image
                     source={require('../../assets/message.png')}
